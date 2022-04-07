@@ -1,0 +1,74 @@
+% Section 2 - ROS 2 Overview
+% Roberto Masocco <roberto.masocco@uniroma2.it>
+% March 13, 2022
+
+% ### ROS 2 Overview ###
+\section{ROS 2 Overview}
+\graphicspath{{figs/section2/}}
+
+% --- What is ROS 2? ---
+\begin{frame}{What is ROS 2?}
+\begin{columns}
+    \column{.5\textwidth}
+    \only<1>{
+        \nolistindent ROS 2 is a \textbg{DDS-based}, \textbg{open-source} middleware for robotic applications. It allows developers to build and manage \textbg{distributed control architectures} made of many modules, usually referred to as \textbg{nodes}.
+    }
+    \only<2>{
+        \nolistindent \nolistindent ROS 2 currently supports \textbg{C++} and \textbg{Python} for application programming, and runs natively on \textbg{Ubuntu Linux 20.04}.\\
+        New versions are periodically released as \textbg{distributions}: the current LTS one is \textbg{Foxy Fitzroy} and the latest one today is \textbg{Galactic Geochelone}; the development version is \textbg{Rolling Ridley} and can only be compiled from source.
+    }
+
+    \column{.5\textwidth}
+    \begin{figure}
+        \centering
+        \includegraphics[width=.9\textwidth]{ros2Logo.jpg}
+        \caption{ROS 2 logo}
+        \label{fig:ros2logos}
+    \end{figure}
+\end{columns}
+\end{frame}
+
+% --- Main Features ---
+\begin{frame}{Main Features}
+As a middleware, it offers the following services to roboticists:
+\begin{itemize}
+    \item<1-> \textbg{three inter-process communication (IPC) paradigms}, easy to set up and based on the DDS;
+    \item organization of software packages, allowing for \textbg{redistribution and code reuse}, thanks to the \textbg{colcon} package manager;
+    \item<1-> module configuration tools: \textbg{node parameters} and \textbg{launch files};
+    \item<1-> integrated \textbg{logging subsystem} (involves both console and log files);
+    \item<1-> CLI \textbg{introspection tools} for debugging and testing;
+    \item<1-> integration with \textbg{simulators} (e.g. Gazebo) and \textbg{data visualizers} (e.g. RViz);
+    \item<2> and much more...
+\end{itemize}
+\end{frame}
+
+% --- Flaws ---
+\begin{frame}{Flaws}
+\visible<1->{
+    \begin{alertblock}{ROS 2 biggest flaws (as of today)}
+        The main concerns arise when developing low-level stuff:
+        \begin{itemize}
+            \item the DDS layer is almost completely abstracted, so some network configurations are impossible;
+            \item the internal job scheduling algorithm (the \textbr{executor}) is \textbr{not suited for hard real-time applications}.
+        \end{itemize}
+    \end{alertblock}
+}
+\visible<2>{
+    What to do when development gets to a really low level?
+    \begin{itemize}
+        \item Use \textbg{micro-ROS}: ROS 2 on microcontrollers and different communication interfaces.
+        \item Hand off stuff to \textbg{microcontrollers}.
+        \item Use something else.
+    \end{itemize}
+}
+\end{frame}
+
+% --- Job Executor ---
+\begin{frame}{Job Executor}
+TODO:
+\begin{itemize}
+    \item event-based explanation
+    \item node jobs+executor+callback scheme
+    \item "to be addressed in new upcoming releases+micro-ROS"
+\end{itemize}
+\end{frame}

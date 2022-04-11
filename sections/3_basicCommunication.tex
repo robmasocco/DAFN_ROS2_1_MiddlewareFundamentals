@@ -1,0 +1,20 @@
+% Section 3 - Basic Communication
+% Roberto Masocco <roberto.masocco@uniroma2.it>
+% March 13, 2022
+
+% ### Basic Communication ###
+\section{Basic Communication}
+\graphicspath{{figs/section3/}}
+
+% --- ROS 2 Messages ---
+\begin{frame}{ROS 2 Messages}
+    \begin{block}{Definition of Message}
+      A message is a \textbf{single DDS data packet} sent over a \textbf{topic}, from a \textbf{publisher node} to a \textbf{subscriber node}, with a specific \textbf{QoS policy}.
+    \end{block}
+    \begin{figure}
+      \centering
+      \includegraphics[scale=.19]{ros2Msg.jpg}
+      \label{fig:msg}
+      \caption{Example of a topic with multiple publisher and subscriber nodes}
+    \end{figure}
+\end{frame}

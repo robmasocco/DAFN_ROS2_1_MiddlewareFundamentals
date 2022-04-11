@@ -46,16 +46,25 @@
 
 % --- Main Features ---
 \begin{frame}{Main Features}
-	As a middleware, it offers the following services to roboticists:
+	As a middleware, it offers many services to roboticists, including:
 	\begin{itemize}
-		\item<1-> \textbg{three inter-process communication (IPC) paradigms}, easy to set up and based on the DDS: \textbg{messages}, \textbg{services} and \textbg{actions};
+		\item \textbg{three communication paradigms}, easy to set up and based on the DDS: \textbg{messages}, \textbg{services} and \textbg{actions};
 		\item organization of software packages, allowing for \textbg{redistribution and code reuse}, thanks to the \textbg{colcon} package manager;
-		\item<1-> module configuration tools: \textbg{node parameters} and \textbg{launch files};
-		\item<1-> integrated \textbg{logging subsystem} (involves both console and log files);
-		\item<1-> CLI \textbg{introspection tools} for debugging and testing;
-		\item<1-> integration with \textbg{simulators} (e.g. Gazebo) and \textbg{data visualizers} (e.g. RViz);
-		\item<2> and much more...
+		\item module configuration tools: \textbg{node parameters} and \textbg{launch files};
+		\item integrated \textbg{logging subsystem} (involves both console and log files);
+		\item CLI \textbg{introspection tools} for debugging and testing;
 	\end{itemize}
+\end{frame}
+\begin{frame}{Main Features}
+  \begin{itemize}
+    \item integration with \textbg{simulators} (e.g. Gazebo) and \textbg{visualizers} (e.g. RViz).
+  \end{itemize}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=.147]{simulation.png}
+    \label{fig:sim}
+    \caption{Simulated drone in Gazebo and RViz (credit: Lorenzo Bianchi)}
+  \end{figure}
 \end{frame}
 
 % --- Flaws ---
@@ -98,5 +107,5 @@
 	\begin{alertblock}{}
 		Executors implement a \textbr{round-robin}, \textbr{non-preemptive} scheduling policy that \textbr{always prioritizes timers}.
 	\end{alertblock}
-	Executors are currently being completely redesigned in Rolling, importing changes from the fixed-priority, preemptive ones of \textbg{micro-ROS}.
+	Executors are currently being redesigned, importing changes from the priority-based \textbg{rclc Executor} of \textbg{micro-ROS}.
 \end{frame}

@@ -158,7 +158,7 @@ A kind of \textbf{smart pointer} (there are also \texttt{unique} and \texttt{wea
 {
   // A new scope starts here
   std::shared_ptr<rclcpp::Node> node =
-    std::make_shared<rclcpp::Node>();
+    std::make_shared<rclcpp::Node>("my_node");
 }
 // The node pointer is reset here!
 \end{lstlisting}

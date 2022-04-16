@@ -25,7 +25,7 @@ Interface files format is specified by the DDS, with data types resolved to mach
 Things start very simply...
 
 \begin{columns}
-\column{.95\textwidth}
+\column{.9\textwidth}
 % Listing: std_msgs/msg/Int64 message definition
 \begin{lstlisting}[language=ros2msg, caption=Definition of the \texttt{std\_msgs/msg/Int64} message]
 int64 data
@@ -42,7 +42,7 @@ string data
 ... then escalate quickly!
 
 \begin{columns}
-\column{.95\textwidth}
+\column{.9\textwidth}
 % Listing: sensor_msgs/msg/Image
 \begin{lstlisting}[language=ros2msg, caption=Definition of the \texttt{sensor\_msgs/msg/Image} composite message]
 std_msgs/Header header
@@ -60,10 +60,10 @@ uint8[] data
 
 \end{frame}
 \begin{frame}[fragile]{Interface Files - Messages}
-Special values (i.e. constants) may be specified.
+Special values (i.e. \emph{constants}) may be specified.
 
 \begin{columns}
-\column{.95\textwidth}
+\column{.9\textwidth}
 % Listing: message with constant
 \begin{lstlisting}[language=ros2msg, caption=Definition of an example message with a constant value]
 int64 MYNUM=1 # Must be of compatible type

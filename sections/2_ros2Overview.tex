@@ -73,7 +73,7 @@
 		\begin{alertblock}{ROS 2 biggest flaws (as of today)}
 			The main concerns arise when developing low-level stuff:
 			\begin{itemize}
-				\item the DDS layer is \textbr{almost completely abstracted}, so some network configurations are impossible;
+				\item \textbr{the DDS layer is almost completely abstracted}, so non-standard network configurations may get tricky;
 				\item the internal job scheduling algorithm (namely the \textbr{executor}) is \textbr{not suited for hard real-time applications}.
 			\end{itemize}
 		\end{alertblock}
@@ -101,7 +101,7 @@
 	\begin{enumerate}
 		\item Middleware functionalities trigger \textbg{(a)synchronous events}.
 		\item Events are handled by \textbg{background jobs}, coded in \textbg{callbacks}.
-		\item Callbacks are registered into a \textbg{node} when its functionalities are specified (e.g. upon creation).
+		\item Callbacks are \textbg{registered} into a \textbg{node} when its functionalities are specified (e.g. upon creation).
 		\item The workload that a node carries is scheduled and processed by an \textbg{executor}, single- or multi-threaded.
 	\end{enumerate}
 	\begin{alertblock}{}

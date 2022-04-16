@@ -99,7 +99,7 @@ Dust off your C programming skills, then add:
 \begin{columns}
 \column{.9\textwidth}
 % Listing: C++ OOP example
-\begin{lstlisting}[language=C++, caption=Example definition of a C++ class]
+\begin{lstlisting}[language=C++, caption=Example of definition of a C++ class]
 class MyClass : public ParentClass
 {
 public:
@@ -149,7 +149,7 @@ These too make names very long, so are usually typedef'd.
 \end{frame}
 \begin{frame}[fragile]{C++ Fundamentals}
 \begin{block}{Shared Pointers}
-A kind of \textbf{smart pointer} (there are also \texttt{unique} and \texttt{weak}) that also holds an \textbf{usage counter}, incremented by every function or object that is handling the pointer. \textbf{When the counter gets to zero, the pointer is reset and the memory which it points to is deallocated.}
+A kind of \textbf{smart pointer} (there are also \texttt{unique} and \texttt{weak}) that also holds an \textbf{usage counter}, incremented by every function or object that is handling the pointer. \textbf{When the \texttt{shared\_ptr} is destroyed, if the counter is zero the pointed object is also destroyed and its memory deallocated.}
 
 \begin{columns}
 \column{.9\textwidth}
@@ -160,11 +160,11 @@ A kind of \textbf{smart pointer} (there are also \texttt{unique} and \texttt{wea
   std::shared_ptr<rclcpp::Node> node =
     std::make_shared<rclcpp::Node>("my_node");
 }
-// The node pointer is reset here!
+// Here the node pointer has been destroyed!
 \end{lstlisting}
 \end{columns}
 
-Obviously that is a template class. ROS 2 heavily relies on them, and the \texttt{SharedPtr} alias is frequently defined.
+Obviously \texttt{std::shared\_ptr} is a template class. ROS 2 heavily relies on them, and the \texttt{SharedPtr} alias is frequently defined.
 \end{block}
 \end{frame}
 

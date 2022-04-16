@@ -75,3 +75,19 @@ int64 number
 They are not bound to any field and will appear as special selectable values in the generated C++/Python libraries.\\
 ROS 2 adds its own guidelines\footnote{\href{https://github.com/IntelligentSystemsLabUTV/ros2-examples/blob/galactic/interfaces.md}{\color{blue}\underline{ros2-examples/interfaces.md}}}, and installed interfaces can be inspected with the \texttt{ros2 interface show} command.
 \end{frame}
+
+% --- Message Topics - Quality of Service ---
+\begin{frame}{Message Topics - Quality of Service}
+A \textbg{QoS policy}\footnote{\href{https://docs.ros.org/en/galactic/Concepts/About-Quality-of-Service-Settings.html}{\color{blue}\underline{About QoS Settings}} (ROS 2 Galactic docs)} for publishers/subscribers has the following attributes:
+\begin{itemize}
+  \item \textbg{History} (\emph{keep last N} or \emph{all})
+  \item \textbg{Depth} (queue size \emph{N})
+  \item \textbg{Reliability} (\emph{best-effort} or \emph{reliable}, default: reliable)
+  \item \textbg{Durability} (publishers resend all messages to "late-joiners")
+  \item Deadline
+  \item \textbg{Lifespan} (message expiration date)
+  \item Liveliness
+  \item Lease Duration
+\end{itemize}
+Default \textbg{profiles} are available (e.g. \textbg{Sensor data}, \textbg{Service}...).
+\end{frame}
